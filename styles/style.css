@@ -144,6 +144,7 @@ body {
     padding-left: 10px;
     background-color: transparent;
     color: #fff;
+    font-weight: 600;
 }
 
 .socials {
@@ -202,4 +203,13 @@ body {
 
 .leftMenu input::placeholder {
     color: rgb(104, 104, 104);
+}
+
+#updateBg {
+    transition: .3s ease-in-out;
+}
+
+#updateBg:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
 }

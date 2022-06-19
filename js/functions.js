@@ -40,11 +40,43 @@ settingsButton.addEventListener('click', () => {
 const headerText = document.getElementById("headerText")
 const header = document.getElementById("header")
 
+const clock = document.getElementById("clock")
+const bookmarks = document.getElementById('bookmarks')
+
 const backgroundLink = document.getElementById("bgLink");
 const updateBackground = document.getElementById("updateBg")
 
-const blurRadius = document.getElementById("blurRadius")
-const blur = document.querySelector(".acrylic")
+const headerColor = document.getElementById("headerColor")
+const clockColor = document.getElementById("clockColor")
+const bookmarksColor = document.getElementById("bookmarksColor")
+
+headerColor.addEventListener("keypress", (e) => {
+    if(headerColor.value) {
+        header.style.color = headerColor.value;
+
+        window.localStorage.setItem("headerColor", headerColor.value)
+    }
+})
+
+clockColor.addEventListener("keypress", (e) => {
+    if(clockColor.value) {
+        clock.style.color = clockColor.value;
+
+        window.localStorage.setItem("clockColor", clockColor.value)
+    }
+})
+
+bookmarksColor.addEventListener("keypress", (e) => {
+    if(bookmarksColor.value) {
+        bookmarks.getElementsByTagName("a")[0].style.color = bookmarksColor.value;
+        bookmarks.getElementsByTagName("a")[1].style.color = bookmarksColor.value;
+        bookmarks.getElementsByTagName("a")[2].style.color = bookmarksColor.value;
+        bookmarks.getElementsByTagName("a")[3].style.color = bookmarksColor.value;
+        bookmarks.getElementsByTagName("a")[4].style.color = bookmarksColor.value;
+
+        window.localStorage.setItem("bookmarksColor", bookmarksColor.value)
+    }
+})
 
 headerText.addEventListener("keyup", (e) => {
     header.innerHTML = headerText.value
@@ -60,8 +92,25 @@ updateBackground.addEventListener("click", () => {
 
 if(window.localStorage.getItem("heading")) {
     header.innerHTML = window.localStorage.getItem("heading");
+    headerText.value = window.localStorage.getItem("heading");
 }
 
 if(window.localStorage.getItem("background")) {
     document.body.style.background = `url("${window.localStorage.getItem("background")}")`
+}
+
+if(window.localStorage.getItem("headerColor")) {
+    header.style.color = window.localStorage.getItem("headerColor");
+}
+
+if(window.localStorage.getItem("clockColor")) {
+    clock.style.color = window.localStorage.getItem("clockColor");
+}
+
+if(window.localStorage.getItem("bookmarksColor")) {
+    bookmarks.getElementsByTagName("a")[0].style.color = window.localStorage.getItem("bookmarksColor");
+    bookmarks.getElementsByTagName("a")[1].style.color = window.localStorage.getItem("bookmarksColor");
+    bookmarks.getElementsByTagName("a")[2].style.color = window.localStorage.getItem("bookmarksColor");
+    bookmarks.getElementsByTagName("a")[3].style.color = window.localStorage.getItem("bookmarksColor");
+    bookmarks.getElementsByTagName("a")[4].style.color = window.localStorage.getItem("bookmarksColor");
 }

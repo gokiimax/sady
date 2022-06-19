@@ -10,6 +10,12 @@ A customizable, minimal start page for web browsers
 - Go to Extension settings and set `https://gokiimax.github.io/sady/` as Redirect URL.
 
 ## Preview
+### Light
 <p align="center">
-  <img src="preview.png">
+  <img src="preview_light.png">
+</p>
+
+### Dark
+<p align="center">
+  <img src="preview_dark.png">
 </p>

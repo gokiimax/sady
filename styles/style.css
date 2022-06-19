@@ -283,10 +283,6 @@ h4 {
     transition: all .3s ease-in-out;
 }
 
-.theme .dark_mode {
-    background-color: red;
-}
-
 .theme:hover{
     cursor: pointer;
 }
